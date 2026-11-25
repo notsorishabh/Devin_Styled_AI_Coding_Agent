@@ -26,3 +26,5 @@ step3-sse-streaming.md
 step4-repo-wiring.md
 step5-agent-loop.md
 architecture-v1.md
+
+.env.example
