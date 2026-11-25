@@ -1,0 +1,295 @@
+:root {
+  font-family: system-ui, sans-serif;
+  color: #e8eaed;
+  background: #0f1115;
+}
+
+body {
+  margin: 0;
+}
+
+h1,
+h2 {
+  margin: 0;
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 1.1rem;
+}
+
+h2 {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #9aa0a6;
+  margin-bottom: 0.6rem;
+}
+
+p {
+  color: #9aa0a6;
+  margin: 0.35rem 0;
+}
+
+.error {
+  color: #f28b82;
+}
+
+button {
+  background: #2a2f3a;
+  color: #e8eaed;
+  border: 1px solid #3c4250;
+  border-radius: 8px;
+  padding: 0.4rem 0.7rem;
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+button.primary {
+  background: #238636;
+  border-color: #2ea043;
+  font-weight: 600;
+}
+
+.login {
+  max-width: 28rem;
+  margin: 4rem auto;
+  padding: 0 1.5rem;
+}
+
+.shell {
+  display: grid;
+  grid-template-columns: 18rem 1fr;
+  min-height: 100vh;
+}
+
+.sidebar {
+  border-right: 1px solid #2a2f3a;
+  padding: 1rem;
+  overflow: auto;
+}
+
+.sidebar header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+}
+
+.sidebar section {
+  margin-bottom: 1.5rem;
+}
+
+.repo-list,
+.task-list,
+.events {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.repo-list {
+  max-height: 11.5rem;
+  overflow: auto;
+}
+
+.repo-list.expanded {
+  max-height: 11.5rem;
+}
+
+.repo-list button {
+  display: block;
+  width: 100%;
+  text-align: left;
+  margin: 0;
+  padding: 0.35rem 0;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  color: #c8ccd2;
+  outline: none;
+  box-shadow: none;
+}
+
+.repo-list button:hover {
+  color: #e8eaed;
+}
+
+.repo-list button.selected {
+  color: #e8eaed;
+  background: transparent;
+  border: none;
+}
+
+.repo-more {
+  margin-top: 0.35rem;
+  width: 100%;
+  background: transparent;
+  border: none;
+  color: #9aa0a6;
+  text-align: left;
+  padding: 0.35rem 0;
+}
+
+.repo-more:hover {
+  color: #e8eaed;
+}
+
+.task-list button {
+  display: block;
+  width: 100%;
+  text-align: left;
+  margin-bottom: 0.35rem;
+  background: transparent;
+}
+
+.task-list button.selected {
+  border-color: #8ab4f8;
+  background: #161b22;
+}
+
+.badge {
+  margin-left: 0.4rem;
+  font-size: 0.7rem;
+  color: #fdd663;
+}
+
+.task-desc {
+  display: block;
+}
+
+.status {
+  display: inline-block;
+  margin-right: 0.4rem;
+  font-size: 0.75rem;
+}
+
+.status-running {
+  color: #8ab4f8;
+}
+
+.status-done {
+  color: #81c995;
+}
+
+.status-failed {
+  color: #f28b82;
+}
+
+.status-waiting_for_user {
+  color: #fdd663;
+}
+
+.when {
+  font-size: 0.75rem;
+  color: #9aa0a6;
+}
+
+.pager {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 1rem 1.25rem 1.25rem;
+}
+
+.stream,
+.empty {
+  flex: 1;
+  overflow: auto;
+}
+
+.stream-head h2 {
+  text-transform: none;
+  letter-spacing: 0;
+  color: #e8eaed;
+  font-size: 1.05rem;
+}
+
+.events li {
+  padding: 0.45rem 0;
+  border-bottom: 1px solid #2a2f3a;
+  font-size: 0.9rem;
+  color: #9aa0a6;
+}
+
+.events strong {
+  display: inline-block;
+  min-width: 7.5rem;
+  margin-right: 0.5rem;
+}
+
+.event-reasoning strong {
+  color: #c58af9;
+}
+
+.event-tool_call strong {
+  color: #8ab4f8;
+}
+
+.event-tool_result strong {
+  color: #81c995;
+  font-weight: 500;
+}
+
+.event-user_prompt strong,
+.event-user_answer strong {
+  color: #fdd663;
+}
+
+.event-done strong {
+  color: #e8eaed;
+}
+
+textarea {
+  width: 100%;
+  box-sizing: border-box;
+  background: #161b22;
+  color: #e8eaed;
+  border: 1px solid #3c4250;
+  border-radius: 8px;
+  padding: 0.6rem 0.75rem;
+  margin: 0.4rem 0 0.6rem;
+  font: inherit;
+}
+
+.composer {
+  border-top: 1px solid #2a2f3a;
+  padding-top: 0.85rem;
+  margin-top: 0.75rem;
+}
+
+.composer-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.ask-user {
+  margin-top: 1rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid #2a2f3a;
+}
+
+@media (max-width: 800px) {
+  .shell {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    border-right: 0;
+    border-bottom: 1px solid #2a2f3a;
+    max-height: 40vh;
+  }
+}

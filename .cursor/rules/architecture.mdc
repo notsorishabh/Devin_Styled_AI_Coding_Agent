@@ -1,0 +1,16 @@
+---
+description: Follow architecture-v1.md as the project spec
+alwaysApply: true
+---
+
+Follow `architecture-v1.md` as the source of truth for this project.
+
+- Do not edit `architecture-v1.md` unless the user explicitly asks to change the architecture.
+- Implement in code under this folder, not in that document.
+- V1: FastAPI backend, SSE (not WebSockets), one Docker sandbox per session, LangGraph single-agent loop last.
+- Agent never talks to Docker. Tools call `SandboxProvider` (`create`, `destroy`, `shell_exec`, `read_file`, `write_file`, `list_dir`).
+- Provider selected via `SANDBOX_PROVIDER` (`docker` now, `e2b` later).
+- Eight tools: `shell_exec`, `read_file`, `write_file`, `list_dir`, `git_commit`, `git_push`, `create_pr`, `ask_user`.
+- Fixed sandbox limits: 1 vCPU, 1 GB RAM, 10-minute hard timeout.
+- Persistence: identity in `users`/`sessions`; append-only `events`; derive status by replay.
+- Build order: OAuth → container lifecycle → events/SSE → clone/file/shell tools → LangGraph.
